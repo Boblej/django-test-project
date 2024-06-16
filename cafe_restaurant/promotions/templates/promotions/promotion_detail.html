@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ promotion.title }}{% endblock %}
+{% block content %}
+<h1>{{ promotion.title }}</h1>
+<img src="{{ promotion.image.url }}" alt="{{ promotion.title }}">
+<p>{{ promotion.description }}</p>
+<p>Start Date: {{ promotion.start_date }}</p>
+<p>End Date: {{ promotion.end_date }}</p>
+<p>Discount: {{ promotion.discount }}%</p>
+{% endblock %}

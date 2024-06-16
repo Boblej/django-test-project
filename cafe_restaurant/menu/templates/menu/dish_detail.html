@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ dish.name }}{% endblock %}
+{% block content %}
+<h1>{{ dish.name }}</h1>
+<img src="{{ dish.image.url }}" alt="{{ dish.name }}">
+<p>{{ dish.description }}</p>
+<p>Price: {{ dish.price }}</p>
+
+<h2>Reviews</h2>
+<ul>
+    {% for review in dish.reviews.all %}
+    <li>{{ review.rating }} stars - {{ review.comment }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

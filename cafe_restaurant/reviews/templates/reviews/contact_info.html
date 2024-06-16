@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Contact Information</h1>
+<p>Address: {{ contact_info.address }}</p>
+<p>Phone: {{ contact_info.phone }}</p>
+<p>Email: {{ contact_info.email }}</p>
+<div>{{ contact_info.map_embed|safe }}</div>
+{% endblock %}

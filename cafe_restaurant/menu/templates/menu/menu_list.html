@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Menu</h1>
+{% for category in categories %}
+    <h2>{{ category.name }}</h2>
+    <ul>
+    {% for dish in category.dishes.all %}
+        <li>
+            <a href="{% url 'menu_detail' dish.id %}">{{ dish.name }}</a> - {{ dish.price }}
+        </li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+{% endblock %}

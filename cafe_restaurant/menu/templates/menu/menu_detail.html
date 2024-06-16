@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ dish.name }}</h1>
+<img src="{{ dish.image.url }}" alt="{{ dish.name }}">
+<p>{{ dish.description }}</p>
+<p>{{ dish.price }}</p>
+
+<h2>Reviews</h2>
+<ul>
+    {% for review in reviews %}
+    <li>{{ review.rating }} stars - {{ review.comment }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Leave a Review</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
